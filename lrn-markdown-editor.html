@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`lrn-markdown-editor`
+A LRN element
+
+@demo demo/index.html
+-->
+
+<dom-module id="lrn-markdown-editor">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[title]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'lrn-markdown-editor',
+
+      properties: {
+        title: {
+          type: String,
+          value: 'lrn-markdown-editor',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
