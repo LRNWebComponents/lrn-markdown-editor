@@ -1,6 +1,5 @@
-<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
-<link rel="import" href="../paper-card/paper-card.html">
+
 <link rel="import" href="../marked-element/marked-element.html">
 <link rel="import" href="../iron-pages/iron-pages.html">
 <link rel="import" href="lrn-markdown-editor-editor.html">
@@ -10,7 +9,6 @@
     <style>
        :host {
         display: block;
-        max-width: 50em;
       }
 
       #split-pane {
@@ -46,11 +44,16 @@
       }
 
       .container-flex {
-        display: inline-flex;
+        display: flex;
+        flex-wrap: nowrap;
       }
 
-      .split-pane lrn-markdown-editor-editor {
-        width: 100%;
+      .split-pane {
+        min-width: 35em;
+      }
+
+      .split-pane .container-flex > * {
+        width: 50%;
       }
 
       .split-pane marked-element {
@@ -118,19 +121,17 @@
       observers: [
         '_selectedChanged(selected)'
       ],
-
       _selectedChanged: function (selected) {
-          document.cookie = this.selected;
-          if (document.cookie === 2) {
-            console.log(document.cookie);
-          }
- 
+        // get current cookies
+        // document.cookie = this.selected;
+        // if the 'split-view' pane is selected
+        if (selected === 2) {
+          // add a cookie for lrn-markdown-editor-splitview
+        }
+        else {
+          // remove the lrn-markdown-editor-splitview cookie if present
+        }
       }
-      
-
-
-
-
     });
   </script>
 </dom-module>
