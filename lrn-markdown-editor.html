@@ -77,7 +77,7 @@
 
       <section>
         <paper-card>
-          <lrn-markdown-editor-editor content="{{content}}"></lrn-markdown-editor-editor>
+          <lrn-markdown-editor-editor content="{{content}}" mathjax="[[mathjax]]"></lrn-markdown-editor-editor>
         </paper-card>
       </section>
 
@@ -90,7 +90,7 @@
       <section class="split-pane">
         <paper-card>
           <div class="container-flex">
-            <lrn-markdown-editor-editor content="{{content}}"></lrn-markdown-editor-editor>
+            <lrn-markdown-editor-editor content="{{content}}" mathjax="[[mathjax]]"></lrn-markdown-editor-editor>
             <marked-element class="preview-pane" markdown="{{content}}"></marked-element>
           </div>
         </paper-card>
@@ -123,6 +123,9 @@
         elReady: {
           type: Boolean,
           value: false
+        },
+        mathjax: {
+          type: Boolean
         }
       },
       observers: [

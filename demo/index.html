@@ -7,6 +7,16 @@
     <title>lrn-markdown-editor demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
+    </script>
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
@@ -21,6 +31,12 @@
       <demo-snippet>
         <template>
           <lrn-markdown-editor></lrn-markdown-editor>
+        </template>
+      </demo-snippet>
+      <h3>Mathjax lrn-markdown-editor demo</h3>
+      <demo-snippet>
+        <template>
+          <lrn-markdown-editor mathjax></lrn-markdown-editor>
         </template>
       </demo-snippet>
     </div>
