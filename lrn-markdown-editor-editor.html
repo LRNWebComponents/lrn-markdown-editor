@@ -44,26 +44,13 @@
       properties: {
         content: {
           type: String,
-          notify: true,
-          observer: '_changed'
+          notify: true
         }
       },
       _changed: function (e)  {
         var content = this.$.markededitor.getContent();
-        // if mathjax is enabled then update it.
-        if (this.mathjax) {
-          this._updatedMathjax();
-        }
         this.set('content', content);
         this.fire('content-updated', {content: this.content});
-      },
-      _updatedMathjax: function (content) {
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-      },
-      ready: function () {
-        if (this.mathjax) {
-          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-        }
       }
     });
   </script>
